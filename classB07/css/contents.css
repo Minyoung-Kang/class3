@@ -15,6 +15,7 @@ body{
     padding: 10px;
     border-radius: 5px;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .chat_wrap .item{
@@ -94,4 +95,16 @@ body{
 }
 .chat_wrap .txt_area input + input{
     margin-top: 5px;
+}
+
+
+/* 모바일 적용 */
+@media all and (max-width:768px){
+    body{
+        padding: 0;
+    }
+    .chat_wrap{
+        height: 100vh;
+        box-sizing: border-box;
+    }
 }
