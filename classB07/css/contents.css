@@ -114,5 +114,17 @@ body{
     .chat_wrap .item .box .time{
         font-size: 13px;
     }
-    .chat_wrap .inner{height: calc(100% - 110px)}
+    .chat_wrap .inner{
+        height: calc(100% - 110px)
+    }
+    .chat_wrap .txt_area{
+        position: fixed;
+        bottom: 5px;
+        left: 5px;
+        right: 5px;
+    }
+    .chat_wrap .txt_area input{
+        height: 40px;
+        font-size: 15px;
+    }
 }
