@@ -1,0 +1,97 @@
+body{
+    padding: 10px;
+}
+.chat_wrap{
+    border: 1px solid #999;
+    width: 300px;
+    padding: 10px;
+    font-size: 13px;
+    color: #333;
+}
+/* 채팅창 */
+.chat_wrap .inner{
+    height: 350px;
+    background-color: #acc2d2;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-y: auto;
+}
+
+.chat_wrap .item{
+    opacity: 0;
+    transform: translateX(10px);
+    transition: all .3s ease-out;
+}
+.chat_wrap .item.on{
+    opacity: 1;
+    transform: translateX(0);
+}
+.chat_wrap .item + .item{
+    margin-top: 15px;
+}
+.chat_wrap .item .box{
+    display: inline-block;
+    max-width: 180px;
+    position: relative;
+}
+.chat_wrap .item .box:before{
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 9px;
+    /* 삼각형 만들기 - css triangle */
+    border-top: 0px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 8px solid #fff;
+}
+.chat_wrap .item .box .msg{
+    background-color: #fff;
+    border-radius: 7px;
+    padding: 8px;
+}
+.chat_wrap .item .box .time{
+    font-size: 11px;
+    color: #999;
+    position: absolute;
+    width: 70px;
+    right: -75px;
+    bottom: 3px;
+}
+/* 나의 말풍선 */
+.chat_wrap .item.mymsg{
+    text-align: right;
+    transform: translateX(-10px) !important;
+}
+.chat_wrap .item.mymsg .box .time{
+    right: auto;
+    left: -75px;
+}
+.chat_wrap .item.mymsg .box .msg{
+    background-color: #fee600;
+}
+.chat_wrap .item.mymsg .box:before{
+    left: auto;
+    right: -8px;
+    border-right: 0;
+    border-left: 8px solid #fee600;
+}
+
+/* 입력창 */
+.chat_wrap .txt_area{
+    padding-top: 5px;
+}
+.chat_wrap .txt_area input{
+    border: 0;
+    width: 100%;
+    background-color: #ddd;
+    height: 30px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding-left: 5px;
+}
+.chat_wrap .txt_area input::placeholder{
+    color: #999;
+}
+.chat_wrap .txt_area input + input{
+    margin-top: 5px;
+}
