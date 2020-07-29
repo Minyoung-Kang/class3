@@ -128,4 +128,10 @@ body{
         height: 40px;
         font-size: 15px;
     }
+    .chat_wrap.keypad_on .inner{
+        height: calc(100% - 360px);
+    }
+    .chat_wrap.keypad_on .txt_area{
+        bottom: 255px;
+    }
 }
