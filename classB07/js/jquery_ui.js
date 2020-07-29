@@ -1,3 +1,5 @@
+var isIos = /iPhone|iPad|iPod/i.text(navigator.userAgent) ? true : false;
+
 $(function(){
     $(".txt_area input").keypress(function(e){
         if(e.keyCode == 13 && $(this).val().length > 0){//엔터를 누를 경우 & 입력하고 있는 input의 값이 있을 때 실행
@@ -24,6 +26,21 @@ $(function(){
         }
     })
 });
+
+//아이폰 처리
+if(isIos){
+    $(".txt_area input").focusin(function(){
+        setTimeout(function(){
+            $(".chat_wrap").addClass("keypad_on");
+            $("html").stop().animate({
+                scrollTop:0
+            },10)
+        },30)
+    })
+    $(".txt_area input").focusout(function(){
+        $(".chat_wrap").removeClass("keypad_on");
+    })
+}
 
 
 //현재시간을 알아내고 값을 반환하는 함수(function)
